@@ -1,0 +1,17 @@
+{
+  "name": "shipt-integration",
+  "version": "1.0.0",
+  "description": "Sync data from Shipt",
+  "main": "kinesis_segment_integration_handler.js",
+  "scripts": {
+    "test": "sync"
+  },
+  "author": "Mammoth Growth",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "latest",
+    "request": "^2.34",
+    "request-promise": "latest"
+
+  }
+}
