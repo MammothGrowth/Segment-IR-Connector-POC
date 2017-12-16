@@ -1,6 +1,7 @@
 const Promise = require('bluebird');
 const rp = require('request-promise');
 
+console.log("impact_radius");
 const maxLengths = {
   OrderId: 64,
   CustomerId: 50,
@@ -24,11 +25,13 @@ const verifyFields = (params)=>{
 
 exports.create = (trackingParams, authCredentials) =>{
 
+  console.log("init impact_radius");
   if(!trackingParams) throw `Missing trackingParams`;
   if(!authCredentials) throw `Missing authCredentials`;
 
   if(!(authCredentials.AccountId && authCredentials.AuthToken && authCredentials.baseURL)) throw `Bad authCredentials`;
 
+  console.log("setting up track");
   const track = (params) =>{
 
     verifyFields(params);
@@ -36,6 +39,8 @@ exports.create = (trackingParams, authCredentials) =>{
     const event = Object.assign(params, trackingParams);
 
     const url = `https://${authCredentials.AccountId}:${authCredentials.AuthToken}@${authCredentials.baseURL}`
+
+    console.log(event);
 
     var options = {
         method: 'POST',
@@ -50,6 +55,8 @@ exports.create = (trackingParams, authCredentials) =>{
       console.log(result);
     });
   }
+  console.log("returning ");
+
 
   return {
     send: track

@@ -64,10 +64,10 @@ exports.map = (row) =>{
   const customerId = row.userId;
 
   const promoCode = properties["promo_code"] || "TEST";
-  const orderId = row.messageId;
+  const orderId = 'U4nV2JTMnwfZRmIRfQ3OYwTrUkmTJdwg0000000'; //row.messageId;
   const eventDate = row.timestamp;
 
-  const billingAmount = properties["billing_amount"];
+  const billingAmount = parseFloat(properties["billing_amount"]);
   const planId = properties["plan_id"];
   const planTerm = properties["plan_term"];
 
