@@ -49,6 +49,24 @@ const segmentEventType = 'track';
 
 */
 
+/*
+
+{
+"ClickId": "XWO2kqTdtwcVU9IRq5SgUzQrUkmT9NXw0000000",
+"OrderId": "U4nV2JTMnwfZRmIRfQ3OYwTrUkmTJdwg0000000",
+"CustomerId": "860992",
+"OrderPromoCode": "TEST",
+"ItemCategory1": "self",
+"ItemSku1": "GROCERY_YEARLY",
+"ItemQuantity1": "1",
+"ItemSubTotal1": "99",
+"EventDate": "2017-12-19T19:01:29.767Z",
+"CampaignId": "7391",
+"ActionTrackerId": "13171"
+}
+
+*/
+
 exports.map = (row) =>{
 
   const eventName = row.event;
@@ -63,9 +81,9 @@ exports.map = (row) =>{
   const properties = row.properties;
   const customerId = row.userId;
 
-  const promoCode = properties["promo_code"] || "TEST";
+  const promoCode = properties["promo_code"];
   const orderId = 'U4nV2JTMnwfZRmIRfQ3OYwTrUkmTJdwg0000000'; //row.messageId;
-  const eventDate = row.timestamp;
+  const eventDate = "NOW" //row.timestamp;
 
   const billingAmount = parseFloat(properties["billing_amount"]);
   const planId = properties["plan_id"];

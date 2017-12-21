@@ -45,7 +45,7 @@ exports.create = (trackingParams, authCredentials) =>{
     var options = {
         method: 'POST',
         uri: url,
-        formData: event,
+        json: event,
         headers:{
           "accept": "application/json"
         }

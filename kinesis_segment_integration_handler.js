@@ -3,9 +3,7 @@ const Promise = require('bluebird');
 
   const trackingParams= {
     CampaignId: 7391,
-    ActionTrackerId: 13171, //Converted Trial
-    Quantity: 1
-//    CLICKID: "05sUyr1QXwYWT1p0QrTKpxDQUkmTJ72o0000000"
+    ActionTrackerId: 13171 //Converted Trial
   }
 
   const authCredentials = {
